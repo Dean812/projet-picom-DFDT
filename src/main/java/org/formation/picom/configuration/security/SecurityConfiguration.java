@@ -11,11 +11,13 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class SecurityConfiguration {
 
-	@Bean
-	SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		http.csrf().disable().headers().frameOptions().disable();
-
-		return http.build();
-	}
-
+	 @Bean
+	    SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+	        http.csrf().disable()
+	        
+	        .headers().frameOptions().disable();
+	        
+	       return http.build();
+	    }
+	
 }
