@@ -22,8 +22,8 @@ public class Zone {
 	private Long id;
 	private String nom;
 	
-	@ManyToMany(mappedBy = "lstAnnonces")
+	@ManyToMany(mappedBy = "lstZones")
 	private List<Annonce> lstAnnonces;
-	@OneToMany(mappedBy = "arret")
-	private Arret arret;
+	@OneToMany(mappedBy = "zone")
+	private List<Arret> lstArrets;
 }

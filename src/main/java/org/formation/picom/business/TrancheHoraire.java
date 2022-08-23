@@ -21,7 +21,7 @@ public class TrancheHoraire {
 	private Long id;
 	private int debut;
 	
-	@ManyToMany(mappedBy = "lstAnnonces")
+	@ManyToMany(mappedBy = "lstTrancheHoraires")
 	private List<Annonce> lstAnnonces;
 	
 }

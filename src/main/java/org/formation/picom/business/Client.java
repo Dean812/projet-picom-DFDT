@@ -1,5 +1,7 @@
 package org.formation.picom.business;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
@@ -24,7 +26,7 @@ public class Client extends Utilisateur {
 		this.numeroDeTelephone = numeroDeTelephone;
 	}
 	
-	@OneToMany(mappedBy = "annonce")
-	private Annonce annonce;
+	@OneToMany(mappedBy = "client")
+	private List<Annonce> lstAnnonces;
 
 }
