@@ -5,9 +5,13 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 @Entity
+@Getter
+@Setter
 @ToString
 
 public class Client extends Utilisateur {
@@ -18,14 +22,6 @@ public class Client extends Utilisateur {
 		super(nom, prenom, email, motDePasse);
 	}
 
-	public String getNumeroDeTelephone() {
-		return numeroDeTelephone;
-	}
-
-	public void setNumeroDeTelephone(String numeroDeTelephone) {
-		this.numeroDeTelephone = numeroDeTelephone;
-	}
-	
 	@OneToMany(mappedBy = "client")
 	private List<Annonce> lstAnnonces;
 
