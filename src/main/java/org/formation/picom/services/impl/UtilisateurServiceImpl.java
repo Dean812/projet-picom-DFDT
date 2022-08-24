@@ -19,17 +19,11 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 
 public class UtilisateurServiceImpl implements UtilisateurService {
-	
+
 	// définition des dépendances du service
 	private UtilisateurDao utilisateurDao;
 	private AdministrateurDao administrateurDao;
 	private ClientDao clientDao;
-	
-
-	@Override
-	public Utilisateur enregistrerUtilisateur(@Valid Utilisateur utilisateur) {
-		return utilisateurDao.save(utilisateur);
-	}
 
 	@Override
 	public Utilisateur recupererUtilisateur(Long id) {
@@ -39,6 +33,12 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 	@Override
 	public List<Utilisateur> recupererUtilisateurs() {
 		return utilisateurDao.findAll();
+
+	}
+
+	@Override
+	public Utilisateur enregistrerUtilisateur(@Valid Utilisateur utilisateur) {
+		return utilisateurDao.save(utilisateur);
 	}
 
 	@Override

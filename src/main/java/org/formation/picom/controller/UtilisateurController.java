@@ -20,6 +20,13 @@ public class UtilisateurController {
 	
 	private final UtilisateurService utilisateurService;
 	
+	@GetMapping(value = { "/index", "/" })
+	public ModelAndView connexionGet() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("index");
+		return mav;
+	}
+	
 	@GetMapping("inscription")
 	public ModelAndView inscriptionGet(@ModelAttribute Client client) {
 		ModelAndView mav = new ModelAndView();
@@ -38,4 +45,6 @@ public class UtilisateurController {
 			return mav;
 		}
 	}
+	
+	
 }

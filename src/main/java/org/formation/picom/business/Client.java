@@ -19,7 +19,7 @@ import lombok.ToString;
 
 public class Client extends Utilisateur {
 
-	@NotBlank(message="Merci de préciser votre prénom")
+	@NotBlank(message="Merci de préciser votre numéro de téléphone")
 	private String numeroDeTelephone;
 
 	public Client(String nom, String prenom, String email, String motDePasse) {
