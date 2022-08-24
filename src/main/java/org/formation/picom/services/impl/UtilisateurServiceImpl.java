@@ -3,7 +3,9 @@ package org.formation.picom.services.impl;
 import org.formation.picom.business.Utilisateur;
 import org.formation.picom.dao.UtilisateurDao;
 import org.formation.picom.services.UtilisateurService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UtilisateurServiceImpl implements UtilisateurService {
 
 	private UtilisateurDao utilisateurDao;
