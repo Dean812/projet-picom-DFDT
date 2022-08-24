@@ -10,4 +10,10 @@ public class Administrateur extends Utilisateur {
 		super(nom, prenom, email, motDePasse);
 	}
 
+	public Administrateur() {
+		super();
+	}
+
+	
+	
 }

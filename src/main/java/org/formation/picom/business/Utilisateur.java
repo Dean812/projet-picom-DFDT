@@ -8,11 +8,13 @@ import javax.validation.constraints.NotNull;
 
 import io.micrometer.core.lang.NonNull;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 @Entity
 @Data
 @RequiredArgsConstructor
+@NoArgsConstructor
 public abstract class Utilisateur {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
