@@ -8,12 +8,18 @@ import javax.validation.constraints.NotNull;
 
 import io.micrometer.core.lang.NonNull;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
 
 @Entity
 @Data
 @RequiredArgsConstructor
+@EqualsAndHashCode
 public abstract class Utilisateur {
+	
+	protected Utilisateur() {
+	}
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
