@@ -19,13 +19,6 @@ public class AuthentificationController {
 	HttpSession httpSession;
 	UtilisateurService utilisateurService;
 
-	@GetMapping(value = { "/index", "/" })
-	public ModelAndView connexionGet() {
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("index");
-		return mav;
-	}
-
 	@PostMapping(value = "connexion")
 	public ModelAndView connexionPost(@RequestParam("EMAIL") String email,
 			@RequestParam("MOT_DE_PASSE") String motDePasse) {
