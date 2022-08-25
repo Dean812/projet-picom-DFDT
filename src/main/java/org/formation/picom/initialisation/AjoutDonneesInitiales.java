@@ -1,6 +1,7 @@
 package org.formation.picom.initialisation;
 
 import org.formation.picom.business.Administrateur;
+
 import org.formation.picom.business.Arret;
 import org.formation.picom.business.Client;
 import org.formation.picom.business.TrancheHoraire;
@@ -9,6 +10,7 @@ import org.formation.picom.dao.ArretDao;
 import org.formation.picom.dao.TrancheHoraireDao;
 import org.formation.picom.dao.UtilisateurDao;
 import org.formation.picom.dao.ZoneDao;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -42,15 +44,16 @@ public class AjoutDonneesInitiales implements CommandLineRunner {
 
 		utilisateurDao.save(administrateur);
 	}
-
-	public void ajouterClient() {
+	
+		
+	private void ajouterClient() {
+						
 		Client client = new Client();
 		client.setNom("Lamontagne");
 		client.setPrenom("Neville");
 		client.setEmail("client1@orsys.fr");
 		client.setMotDePasse("12345678");
 		client.setNumeroDeTelephone("0798765432");
-
 		utilisateurDao.save(client);
 	}
 
@@ -76,6 +79,9 @@ public class AjoutDonneesInitiales implements CommandLineRunner {
 			trancheHoraire.setDebut(i);
 			trancheHoraireDao.save(trancheHoraire);
 		}
+
+	
 	}
+
 
 }

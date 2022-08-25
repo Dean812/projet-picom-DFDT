@@ -1,5 +1,6 @@
 package org.formation.picom.services.impl;
 
+
 import java.util.List;
 
 import javax.validation.Valid;
@@ -17,18 +18,13 @@ import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
-
 public class UtilisateurServiceImpl implements UtilisateurService {
 
-	// définition des dépendances du service
+	
 	private UtilisateurDao utilisateurDao;
 	private AdministrateurDao administrateurDao;
 	private ClientDao clientDao;
 
-	@Override
-	public Utilisateur recupererUtilisateur(Long id) {
-		return utilisateurDao.findById(id).orElse(null);
-	}
 
 	@Override
 	public List<Utilisateur> recupererUtilisateurs() {
@@ -49,6 +45,16 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 	@Override
 	public Client enregistrerClient(@Valid Client client) {
 		return clientDao.save(client);
+	}
+	
+	@Override
+	public Utilisateur recupererUtilisateur(String email, String motDePasse) {
+		return utilisateurDao.findByEmailAndMotDePasse(email, motDePasse);
+	}
+
+	@Override
+	public Client recupererClient(String email, String motDePasse) {
+		return clientDao.findByEmailAndMotDePasse(email, motDePasse);
 	}
 
 }
