@@ -12,13 +12,16 @@ import org.formation.picom.dao.AdministrateurDao;
 import org.formation.picom.dao.ClientDao;
 import org.formation.picom.dao.UtilisateurDao;
 import org.formation.picom.services.UtilisateurService;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
-public class UtilisateurServiceImpl implements UtilisateurService {
+public class UtilisateurServiceImpl implements UtilisateurService, UserDetailsService {
 
 	
 	private UtilisateurDao utilisateurDao;
@@ -55,6 +58,12 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 	@Override
 	public Client recupererClient(String email, String motDePasse) {
 		return clientDao.findByEmailAndMotDePasse(email, motDePasse);
+	}
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
