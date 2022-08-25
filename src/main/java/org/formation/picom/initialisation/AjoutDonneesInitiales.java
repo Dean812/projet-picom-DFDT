@@ -30,6 +30,7 @@ public class AjoutDonneesInitiales implements CommandLineRunner {
 		ajouterZone();
 		ajouterArrets();
 		ajouterTrancheHoraire();
+
 	}
 
 	public void ajouterAdministrateur() {

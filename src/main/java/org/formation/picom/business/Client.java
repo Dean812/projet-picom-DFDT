@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotBlank;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -18,6 +19,7 @@ import lombok.ToString;
 
 public class Client extends Utilisateur {
 
+	@NotBlank(message="Merci de préciser votre numéro de téléphone")
 	private String numeroDeTelephone;
 
 	public Client(String nom, String prenom, String email, String motDePasse) {
