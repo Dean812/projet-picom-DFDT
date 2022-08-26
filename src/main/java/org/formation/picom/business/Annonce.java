@@ -10,18 +10,24 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 @Entity
 @Data
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class Annonce {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDateTime dateHeureCreation;
+	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDateTime dateHeureDebut;
+	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDateTime dateHeureFin;
 	private String contenu;
 	private String numeroCarte;
@@ -36,4 +42,8 @@ public class Annonce {
 	private List<Zone> lstZones;
 	@ManyToMany
 	private List<TrancheHoraire> lstTrancheHoraires;
+	
+	public Annonce() {
+		dateHeureCreation = LocalDateTime.now();
+		}
 }

@@ -10,12 +10,11 @@ import lombok.AllArgsConstructor;
 @Service
 @AllArgsConstructor
 public class AnnonceServiceImpl implements AnnonceService {
-	
+
 	private AnnonceDao annonceDao;
 
 	@Override
 	public Annonce enregistrerAnnonce(Annonce annonce) {
 		return annonceDao.save(annonce);
 	}
-
 }

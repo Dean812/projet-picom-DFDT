@@ -51,8 +51,8 @@
 	                </tr>
 	                <tr>
 	                    <td></td>
-	                    <td><input type="date"></td>
-	                    <td><input type="date"></td>
+	                    <td><input name="dateDebut" type="date"></td>
+	                    <td><input name="dateFin" type="date"></td>
 	                </tr>
 	                <tr>
 	                    <th scope="row">Tranche horaire</th>
