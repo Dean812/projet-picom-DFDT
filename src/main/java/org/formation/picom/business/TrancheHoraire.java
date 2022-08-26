@@ -24,4 +24,8 @@ public class TrancheHoraire {
 	@ManyToMany(mappedBy = "lstTrancheHoraires")
 	private List<Annonce> lstAnnonces;
 	
+	public String getTrancheHoraireFormatee() {
+		return debut + "h";
+	}
+	
 }

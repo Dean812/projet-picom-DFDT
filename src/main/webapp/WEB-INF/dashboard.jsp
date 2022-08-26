@@ -7,6 +7,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Page<h1> Dashboard</h1>
+    <div>
+        <h1> Dashboard </h1>
+        <button>Se déconnecter</button>
+    </div>
+    <div>
+        <h2>Voici la liste de vos annonces</h2>
+        <button>
+        	<a href="ajoutAnnonce">Rédiger une annonce</a>
+        </button>
+
+    </div>
 </body>
 </html>

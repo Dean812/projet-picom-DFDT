@@ -11,6 +11,7 @@ import javax.persistence.OneToMany;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Data
@@ -23,6 +24,7 @@ public class Zone {
 	private String nom;
 	
 	@ManyToMany(mappedBy = "lstZones")
+	@ToString.Exclude
 	private List<Annonce> lstAnnonces;
 	@OneToMany(mappedBy = "zone")
 	private List<Arret> lstArrets;
