@@ -1,17 +1,25 @@
 package org.formation.picom.controller.rest;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
+import java.util.List;
+
+import org.formation.picom.business.Utilisateur;
+import org.formation.picom.services.UtilisateurService;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-@CrossOrigin(origins = "http://localhost:4200/", maxAge = 3600)
 @RestController
-@RequestMapping("api/utilisateurs/")
+@RequestMapping("/api/")
 public class UtilisateurRestController {
 	
-//	private final UtilisateurService utilisateurService;
+	UtilisateurService utilisateurService;
 	
-}
+	@GetMapping("AllUsers")
+	public List<Utilisateur> recupererUtilisateurs() { 
+		return utilisateurService.recupererUtilisateurs();
+	}
+	
+} 
