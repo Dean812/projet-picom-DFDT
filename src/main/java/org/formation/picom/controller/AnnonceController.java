@@ -1,6 +1,8 @@
 package org.formation.picom.controller;
 
 
+import javax.validation.Valid;
+
 import org.formation.picom.business.Annonce;
 import org.formation.picom.services.AnnonceService;
 import org.formation.picom.services.TrancheHoraireService;
@@ -32,8 +34,9 @@ public class AnnonceController {
 	}
 	
 	@PostMapping("ajoutAnnonce")
-	public ModelAndView postAnnonce( @ModelAttribute Annonce annonce, BindingResult result) {
+	public ModelAndView postAnnonce(@Valid @ModelAttribute Annonce annonce, BindingResult result) {
 		if(result.hasErrors()) {
+			System.out.println(result);
 			return ajoutAnnonceGet(annonce);
 		} else {
 			annonceService.enregistrerAnnonce(annonce);
@@ -41,6 +44,5 @@ public class AnnonceController {
 			mav.addObject("notification", "Annonce ajoutée");
 			return mav;
 		}
-	}
-	
+	}	
 }
