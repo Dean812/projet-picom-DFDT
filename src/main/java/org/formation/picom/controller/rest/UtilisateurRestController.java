@@ -43,5 +43,11 @@ public class UtilisateurRestController {
 		client.setNumeroDeTelephone(clientDto.getNumeroDeTelephone());
 		return utilisateurService.enregistrerUtilisateur(client);
 	}
+	
+	@GetMapping("authUtilisateur")
+	@ResponseStatus(code = HttpStatus.ACCEPTED)
+    public Utilisateur recupererUtilisateur(String email,String motDePasse) {
+        return utilisateurService.recupererUtilisateur(email, motDePasse);
+    }
 
 }
