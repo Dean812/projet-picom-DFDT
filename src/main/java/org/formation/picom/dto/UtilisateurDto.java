@@ -24,7 +24,7 @@ public class UtilisateurDto {
 	String nom;
 	
 	@NotBlank(message = "Merci de préciser votre prénom.")
-	String prénom;
+	String prenom;
 	
 	@Email(message = "Merci de préciser une adresse mail au bon format")
 	@NotBlank(message = "Merci de préciser une adresse email")
