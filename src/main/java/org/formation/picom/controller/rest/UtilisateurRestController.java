@@ -8,9 +8,10 @@ import org.formation.picom.business.Client;
 import org.formation.picom.business.Utilisateur;
 import org.formation.picom.dto.ClientDto;
 import org.formation.picom.services.UtilisateurService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.CrossOrigin;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,12 +19,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import lombok.AllArgsConstructor;
-
 @RestController
 @RequestMapping("api/utilisateurs/")
 public class UtilisateurRestController {
-	
+
+	@Autowired
 	UtilisateurService utilisateurService;
 
 	@GetMapping("ensembleUtilisateurs")
@@ -43,11 +43,11 @@ public class UtilisateurRestController {
 		client.setNumeroDeTelephone(clientDto.getNumeroDeTelephone());
 		return utilisateurService.enregistrerUtilisateur(client);
 	}
-	
-	@GetMapping("authUtilisateur")
-	@ResponseStatus(code = HttpStatus.ACCEPTED)
-    public Utilisateur recupererUtilisateur(String email,String motDePasse) {
-        return utilisateurService.recupererUtilisateur(email, motDePasse);
-    }
-	
+
+	@PostMapping("authUtilisateur")
+	@ResponseStatus(code = HttpStatus.OK)
+	public Utilisateur recupererUtilisateur(@RequestBody ClientDto clientDto) throws Exception { // if nok > renvoie une (dirty) exception
+		return utilisateurService.recupererUtilisateur(clientDto.getEmail(), clientDto.getMotDePasse());
+	}
+
 }
