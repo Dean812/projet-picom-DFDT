@@ -2,6 +2,7 @@ package org.formation.picom.services.impl;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -48,8 +49,14 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 	}
 	
 	@Override
-	public Utilisateur recupererUtilisateur(String email, String motDePasse) {
-		return utilisateurDao.findByEmailAndMotDePasse(email, motDePasse);
+	public Utilisateur recupererUtilisateur(String email, String motDePasse) throws Exception {
+		Optional<Utilisateur> userDao  = utilisateurDao.findByEmailAndMotDePasse(email, motDePasse);
+		if(userDao.isPresent()) {
+			return userDao.get(); // le Get récupère les valeurs si elles existent
+		} else {
+			throw new Exception(); 
+		}
+		
 	}
 
 	@Override

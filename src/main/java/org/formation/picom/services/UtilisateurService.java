@@ -19,7 +19,7 @@ public interface UtilisateurService {
 
 	Client enregistrerClient(@Valid Client client);
 
-	Utilisateur recupererUtilisateur(String email, String motDePasse);
+	Utilisateur recupererUtilisateur(String email, String motDePasse) throws Exception;
 
 	Client recupererClient(String email, String motDePasse);
 
