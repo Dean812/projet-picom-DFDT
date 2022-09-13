@@ -37,7 +37,7 @@ public class UtilisateurRestController {
 		return utilisateurService.recupererUtilisateurs();
 	}
 
-	@PostMapping("clientDto")
+	@PostMapping("clientDto")  // ne pas mettre dto ici <<----
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public Utilisateur ajouterClient(@Valid @RequestBody ClientDto clientDto, BindingResult result) {
 
