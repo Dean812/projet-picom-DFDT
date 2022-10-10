@@ -13,16 +13,17 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class AnnonceServiceImpl implements AnnonceService {
 
-	private AnnonceDao annonceDao;
+	private final AnnonceDao annonceDao;
 
+	@Override
+	public List<Annonce> recupererAnnonces() {
+		return annonceDao.findAll();
+	}
+		
 	@Override
 	public Annonce enregistrerAnnonce(Annonce annonce) {
 		return annonceDao.save(annonce);
 	}
 	
-	@Override
-	public List<Annonce> recupererAnnonces() {
-		return annonceDao.findAll();
-	}
 	
 }

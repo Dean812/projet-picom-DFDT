@@ -20,9 +20,9 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class TarifServiceImpl implements TarifService {
 
-	private TarifDao tarifDao;
-	private ZoneDao zoneDao;
-	private TrancheHoraireDao trancheHoraireDao;
+	private final TarifDao tarifDao;
+	private final ZoneDao zoneDao;
+	private final TrancheHoraireDao trancheHoraireDao;
 	
 	@Override
 	public List<Tarif> recupererTarifs() {

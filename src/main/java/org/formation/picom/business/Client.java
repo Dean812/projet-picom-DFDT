@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NonNull;
@@ -35,7 +36,7 @@ public class Client extends Utilisateur implements Serializable {
 		super();
 		this.numeroDeTelephone = numeroDeTelephone;
 	}
-
+	@JsonIgnore
 	@OneToMany(mappedBy = "client")
 	private List<Annonce> lstAnnonces;
 

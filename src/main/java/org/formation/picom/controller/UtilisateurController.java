@@ -18,7 +18,7 @@ import lombok.AllArgsConstructor;
 
 public class UtilisateurController {
 	
-	private final UtilisateurService utilisateurService;
+	private final UtilisateurService utilisateurService = null;
 	
 	@GetMapping(value = { "/index", "/" })
 	public ModelAndView connexionGet() {

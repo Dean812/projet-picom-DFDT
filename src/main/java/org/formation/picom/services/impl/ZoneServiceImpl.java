@@ -13,7 +13,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class ZoneServiceImpl implements ZoneService {
 
-	private ZoneDao zoneDao;
+	private final ZoneDao zoneDao;
 
 	@Override
 	public List<Zone> recupererZones() {

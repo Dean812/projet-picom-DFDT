@@ -27,6 +27,7 @@ public class Zone {
 	@ManyToMany(mappedBy = "lstZones")
 	@ToString.Exclude
 	private List<Annonce> lstAnnonces;
+
 	@JsonIgnore
 	@OneToMany(mappedBy = "zone")
 	private List<Arret> lstArrets;

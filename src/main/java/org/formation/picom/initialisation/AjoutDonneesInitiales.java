@@ -20,10 +20,10 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class AjoutDonneesInitiales implements CommandLineRunner {
 
-	private final UtilisateurDao utilisateurDao;
-	private final ZoneDao zoneDao;
-	private final ArretDao arretDao;
-	private final TrancheHoraireDao trancheHoraireDao;
+//	private final UtilisateurDao utilisateurDao;
+//	private final ZoneDao zoneDao;
+//	private final ArretDao arretDao;
+//	private final TrancheHoraireDao trancheHoraireDao;
 
 	@Override
 	public void run(String... args) throws Exception {

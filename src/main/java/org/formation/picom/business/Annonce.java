@@ -13,6 +13,7 @@ import javax.validation.constraints.Future;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.CreditCardNumber;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;

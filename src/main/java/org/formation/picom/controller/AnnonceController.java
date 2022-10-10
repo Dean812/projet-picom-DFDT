@@ -20,9 +20,9 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class AnnonceController {
 	
-	private final AnnonceService annonceService;
-	private final ZoneService zoneService;
-	private final TrancheHoraireService trancheHoraireService;
+	private final AnnonceService annonceService = null;
+	private final ZoneService zoneService = null;
+	private final TrancheHoraireService trancheHoraireService = null;
 	
 	@GetMapping(value = { "ajoutAnnonce" })
 	public ModelAndView ajoutAnnonceGet(@ModelAttribute Annonce annonce) {

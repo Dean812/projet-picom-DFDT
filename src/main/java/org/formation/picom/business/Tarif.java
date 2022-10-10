@@ -7,11 +7,9 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 
 @Entity
 @Data
-@RequiredArgsConstructor
 public class Tarif {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

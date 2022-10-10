@@ -22,9 +22,9 @@ import lombok.AllArgsConstructor;
 public class UtilisateurServiceImpl implements UtilisateurService {
 
 	
-	private UtilisateurDao utilisateurDao;
-	private AdministrateurDao administrateurDao;
-	private ClientDao clientDao;
+	private final UtilisateurDao utilisateurDao;
+	private final AdministrateurDao administrateurDao;
+	private final ClientDao clientDao;
 
 
 	@Override

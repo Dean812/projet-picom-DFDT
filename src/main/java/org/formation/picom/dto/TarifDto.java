@@ -6,6 +6,7 @@ import org.formation.picom.business.TrancheHoraire;
 import org.formation.picom.business.Zone;
 
 import lombok.AccessLevel;
+//import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,6 +15,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @Getter
 @Setter
+//@Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class TarifDto {
 

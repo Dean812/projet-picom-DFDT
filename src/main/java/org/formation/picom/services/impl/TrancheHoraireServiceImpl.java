@@ -13,7 +13,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class TrancheHoraireServiceImpl implements TrancheHoraireService {
 	
-	private TrancheHoraireDao trancheHoraireDao;
+	private final TrancheHoraireDao trancheHoraireDao;
 
 	@Override
 	public List<TrancheHoraire> recupererTrancheHoraire() {
